@@ -5,4 +5,5 @@ include 'com.david.dubbo.client'
 include 'com.david.dubbo.api'
 include 'com.david.database.driver'
 include 'com.david.database.driver.mysql'
+include 'com.david.database.driver.oracle'
 

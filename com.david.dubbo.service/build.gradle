@@ -14,8 +14,8 @@ repositories {
 dependencies {
     compile project(':com.david.dubbo.api')
     compile project(':com.david.database.driver')
-    compile project(':com.david.database.driver')
     compile project(':com.david.database.driver.mysql')
+    compile project(':com.david.database.driver.oracle')
     // https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper
     compile group: 'org.apache.zookeeper', name: 'zookeeper', version: '3.4.13', ext: 'pom'
 // https://mvnrepository.com/artifact/com.101tec/zkclient
