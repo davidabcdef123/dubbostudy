@@ -1,0 +1,8 @@
+rootProject.name = 'com.david.dubbo.study'
+include 'dubbo-client'
+include 'com.david.dubbo.service'
+include 'com.david.dubbo.client'
+include 'com.david.dubbo.api'
+include 'com.david.database.driver'
+include 'com.david.database.driver.mysql'
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd        http://code.alibabatech.com/schema/dubbo        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <!-- 提供方应用信息，用于计算依赖关系 -->
+    <dubbo:application name="hello-world-app"  />
+    <!-- 使用multicast广播注册中心暴露服务地址 file用于缓存provider列表-->
+
+    <!--id="zookeeper" 其实没有引用其实没什么用处-->
+    <dubbo:registry id="zookeeper" address="zookeeper://192.168.80.135:2181" file="d:/dubbo-server" />
+
+    <!-- 声明需要暴露的服务接口 registry="zookeeper"其实可以不用写-->
+    <!-- timeout="2" 可以通过time设置的很小来模拟触发mock服务降级-->
+    <dubbo:reference id="demoService"
+                     interface="com.david.dubbo.api.IHelloService"
+                     registry="zookeeper"
+                     mock="com.david.dubbo.client.TestMock" cluster="failover"/>
+
+
+
+</beans>
