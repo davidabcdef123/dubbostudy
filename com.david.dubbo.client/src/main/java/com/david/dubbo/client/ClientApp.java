@@ -17,7 +17,7 @@ public class ClientApp {
         context.start();
         IHelloService helloService = (IHelloService) context.getBean("demoService");//获取远程服务代理
         String hello = helloService.sayHello("world");
-        System.out.println(hello);
+        System.err.println(hello);
 
         //todo 一直不行
        // Protocol protocol=ExtensionLoader.getExtensionLoader(Protocol.class).getExtension("defineProtocol");
